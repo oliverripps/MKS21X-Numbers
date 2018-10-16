@@ -1,32 +1,110 @@
-public class RationalNumber extends RealNumber{
-  /*private int X;
-  private int Y;
-  public RationalNumber(int x,int y){
-    x=X;
-    y=Y;
-  }*/
-  public boolean notundefined(RationalNumber a){
-    return true;
-//Y can't be 0
-  }
-  public double simplified(RationalNumber a){
-    return 1.0;
-  //X over Y as a double(include reducing of decimals if over 4))
-  }
-  public double realvsrational(RationalNumber a, RealNumber b){
-    return 1.1;
-  //Double of which is bigger using simplified(not reduced?)
-  }
-  public String getrational(RationalNumber a){
-    return "imemotionaldriventhough";
-//return X / Y
-  }
-  public String getsimplified(RationalNumber a){
-    return "Ihaveacomplexpersonalitythough";
-//return simplified(double)
-  }
-  public void ifoneorzero(RationalNumber a){
-//return 0 or 1 if denominator is 1 or numerator 0
+public class RationalNumber extends RealNumber
+{
+  private int numerator, denominator;
+
+  /**Initialize the RationalNumber with the provided values
+  *  if the denominator is 0, make the fraction 0/1 instead
+  *@param nume the numerator
+  *@param deno the denominator
+  */
+  public RationalNumber(int nume, int deno){
+    super(0);
+    numerator= nume;
+    denominator= deno;
   }
 
+  public double getValue(){
+    v= (numerator*1.0)/(denominator*1.0);
+    return v;
+  }
+
+  /**
+  *@return the numerator
+  */
+  public int getNumerator(){
+    return numerator;
+  }
+  /**
+  *@return the denominator
+  */
+  public int getDenominator(){
+    return demoninator;
+  }
+  /**
+  *@return a new RationalNumber that has the same numerator
+  *and denominator as this RationalNumber but reversed.
+  */
+  public RationalNumber reciprocal(){
+    RationalNumber n = new RationalNumber(int denominator, int numerator);
+    return n;
+  }
+  /**
+  *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
+  */
+  public boolean equals(RationalNumber other){
+    return false;
+  }
+
+
+  /**
+  *@return the value expressed as "3/4" or "8/3"
+  */
+  public String toString(){
+    return "0";
+  }
+
+
+
+  /**Calculate the GCD of two integers.
+  *@param a the first integers
+  *@param b the second integer
+  *@return the value of the GCD
+  */
+  private static int gcd(int a, int b){
+    /*use euclids method or a better one*/
+    return 0;
+  }
+
+
+
+  /**
+  *Divide the numerator and denominator by the GCD
+  *This must be used to maintain that all RationalNumbers are
+  *reduced after construction.
+  */
+  private void reduce(){
+
+  }
+
+
+
+  /******************Operations!!!!****************/
+
+
+  /**
+  *Return a new RationalNumber that is the product of this and the other
+  */
+  public RationalNumber multiply(RationalNumber other){
+    return null;
+  }
+
+  /**
+  *Return a new RationalNumber that is the this divided by the other
+  */
+  public RationalNumber divide(RationalNumber other){
+    return null;
+  }
+
+  /**
+  *Return a new RationalNumber that is the sum of this and the other
+  */
+  public RationalNumber add(RationalNumber other){
+    return null;
+  }
+  /**
+  *Return a new RationalNumber that this minus the other
+  */
+  public RationalNumber subtract(RationalNumber other){
+    return null;
+  }
 }

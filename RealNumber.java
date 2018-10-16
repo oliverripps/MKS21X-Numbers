@@ -1,15 +1,29 @@
 public class RealNumber{
-  /*private double X;
+  private double value;
 
-  public RealNumber(double x){
-    X=x;
-  }*/
-  public double isgreater(RealNumber a,RealNumber b){
-    return 1.0;
-    //whichever is bigger
+  public RealNumber(double v){
+    value = v;
   }
-  public double getreal(RealNumber a){
-    return 1.1;
+  public double add(RealNumber other){
+    double n = this.getValue() + other.getValue();
+    return n;
   }
-
+  public double multiply(RealNumber other){
+    double n = this.getValue() * other.getValue();
+    return n;
+  }
+  public double divide(RealNumber other){
+    double n = this.getValue() / other.getValue();
+    return n;
+  }
+  public double subtract(RealNumber other){
+    double n = this.getValue() - other.getValue();
+    return n;
+  }
+  public double getValue(){
+    return value;
+  }
+  public String toString(){
+    return ""+value;
+  }
 }
