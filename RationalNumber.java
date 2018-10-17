@@ -42,7 +42,7 @@ public class RationalNumber extends RealNumber
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    return false;
+    return (this.getValue()==other.getValue());
   }
 
 
@@ -50,8 +50,17 @@ public class RationalNumber extends RealNumber
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
-    return "0";
+    if (numerator==0){
+      return "" + 0;}
+    if (denominator==1){
+      return "" + numerator;}
+    if (numerator<0 || denominator<0){
+      return "" + numerator.getValue()*-1 + "/" + denominator.getValue()*-1;
+    }
+    else {
+      return "" + numerator.getValue() + "/" + denominator.getValue();}
   }
+}
 
 
 
@@ -61,8 +70,19 @@ public class RationalNumber extends RealNumber
   *@return the value of the GCD
   */
   private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
-    return 0;
+    int high = a;
+    int low = b;
+    while (low !=0 && high !=0){
+      int n = high % low;
+      low = high;
+      n = low;
+    }
+    if (low==0){
+      return high;
+    }
+    if (high==0){
+      return low;
+    }
   }
 
 
